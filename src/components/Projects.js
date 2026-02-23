@@ -18,6 +18,7 @@ export const Projects = () => {
       year: "2024",
       tags: ["E-COMMERCE", "UI DESIGN", "RESPONSIVE"],
       link: "#",
+      github: "https://github.com/NabihahFatiny/ClassConnect",
       number: 1,
     },
     {
@@ -27,6 +28,7 @@ export const Projects = () => {
       year: "2024",
       tags: ["WEB APP", "UI DESIGN"],
       link: "#",
+      github: "https://github.com/NabihahFatiny/FKPark",
       number: 2,
     },
     {
@@ -36,6 +38,7 @@ export const Projects = () => {
       year: "2023",
       tags: ["RESPONSIVE", "FRONTEND"],
       link: "#",
+      github: "https://github.com/NabihahFatiny/nilamfyp",
       number: 3,
     },
     {
@@ -45,6 +48,7 @@ export const Projects = () => {
       year: "2023",
       tags: ["E-COMMERCE", "FULL-STACK"],
       link: "#",
+      github: "https://github.com/NabihahFatiny/foodsystem",
       number: 4,
     },
     {
@@ -54,15 +58,17 @@ export const Projects = () => {
       year: "2023",
       tags: ["UI DESIGN", "MOBILE"],
       link: "#",
+      github: "https://github.com/NabihahFatiny/Workshop-Management-System",
       number: 5,
     },
     {
       title: "Portfolio",
-      description: "Analytics dashboard with charts, filters, and real-time data visualization.",
+      description: "This portfolio site built with React—responsive layout, project showcase, and contact section.",
       imgUrl: projImg3,
       year: "2024",
-      tags: ["DATA VIZ", "RESPONSIVE"],
+      tags: ["REACT", "RESPONSIVE"],
       link: "#",
+      github: "https://github.com/NabihahFatiny/personal-portfolio",
       number: 6,
     },
   ];
