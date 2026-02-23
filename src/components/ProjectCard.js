@@ -29,7 +29,7 @@ export const ProjectCard = ({
           <p className="project-card-desc">{description}</p>
           <div className="project-card-footer">
             <a href={codeUrl} target="_blank" rel="noopener noreferrer" className="project-card-link">
-              <Github size={16} /> GITHUB CODE
+              <Github size={18} /> GITHUB CODE
             </a>
             {number != null && <span className="project-card-num">{String(number).padStart(2, '0')}</span>}
           </div>
