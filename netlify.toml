@@ -1,0 +1,9 @@
+# Netlify build config for tinyportfolio
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# Don't treat ESLint/CSS warnings as build failures (e.g. dependency autoprefixer warnings)
+[build.environment]
+  CI = "false"
+  NODE_VERSION = "18"
