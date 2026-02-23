@@ -36,6 +36,41 @@ body {
   font-family: 'Centra', sans-serif !important;
 }
 
+/* Cute moving arrow cursor (mouse only) */
+@media (pointer: fine) {
+  body,
+  .App { cursor: none; }
+}
+
+.cursor-arrow {
+  pointer-events: none;
+  position: fixed;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s ease;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #aa367c 0%, #6b3fa3 100%);
+  box-shadow: 0 0 12px rgba(170, 54, 124, 0.6);
+}
+
+.cursor-trail {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #e8a0d0;
+  text-shadow: 0 0 10px rgba(232, 160, 208, 0.8);
+  animation: cursor-wiggle 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes cursor-wiggle {
+  from { transform: translate(-50%, -50%) rotate(-8deg); }
+  to   { transform: translate(-50%, -50%) rotate(8deg); }
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;

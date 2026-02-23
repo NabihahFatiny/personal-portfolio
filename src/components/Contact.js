@@ -26,21 +26,65 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
+    setStatus({});
+    const formspreeId = process.env.REACT_APP_FORMSPREE_ID;
+    const useFormspree = formspreeId && formspreeId.length > 0;
+
     try {
-      const response = await fetch("http://localhost:5000/contact", {
+      const url = useFormspree
+        ? `https://formspree.io/f/${formspreeId}`
+        : (process.env.REACT_APP_CONTACT_API || "/contact");
+      const body = useFormspree
+        ? {
+            name: formDetails.firstName || "—",
+            email: formDetails.email || "—",
+            message: formDetails.message || "—",
+            _replyto: formDetails.email,
+          }
+        : formDetails;
+
+      const response = await fetch(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json;charset=utf-8" },
-        body: JSON.stringify(formDetails),
+        headers: {
+          "Content-Type": "application/json",
+          ...(useFormspree ? { Accept: "application/json" } : {}),
+        },
+        body: JSON.stringify(body),
       });
-      const result = await response.json();
+
+      let result = {};
+      try {
+        result = await response.json();
+      } catch {
+        if (!response.ok) {
+          setStatus({ success: false, message: "Something went wrong. Please try again later." });
+          setButtonText("Send Message");
+          return;
+        }
+      }
+
       setFormDetails(formInitialDetails);
-      if (result.code === 200) {
-        setStatus({ success: true, message: 'Message sent successfully' });
+
+      if (useFormspree) {
+        if (response.ok) {
+          setStatus({ success: true, message: "Message sent successfully." });
+        } else {
+          setStatus({ success: false, message: result.error || "Failed to send. Please try again." });
+        }
       } else {
-        setStatus({ success: false, message: 'Something went wrong, please try again later.' });
+        if (response.ok && result.code === 200) {
+          setStatus({ success: true, message: "Message sent successfully." });
+        } else {
+          setStatus({ success: false, message: result.message || "Something went wrong. Please try again later." });
+        }
       }
     } catch (err) {
-      setStatus({ success: false, message: 'Something went wrong, please try again later.' });
+      setStatus({
+        success: false,
+        message: useFormspree
+          ? "Network error. Please check your connection and try again."
+          : "Could not reach the server. Run 'npm run dev' or start the contact server (node server.js).",
+      });
     }
     setButtonText("Send Message");
   };
