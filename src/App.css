@@ -835,6 +835,98 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+/************ Certification & Participation Css ************/
+.certification {
+  padding: 80px 0;
+  position: relative;
+  background: linear-gradient(160deg, #fce4ec 0%, #f8bbd9 50%, #f5c6dc 100%);
+  animation: certification-blink 3s ease-in-out infinite;
+}
+@keyframes certification-blink {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.92; filter: brightness(1.08); }
+}
+.certification-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.certification-title-cute {
+  font-size: clamp(2rem, 4vw + 1rem, 48px);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #4a2c3a;
+  letter-spacing: -0.02em;
+}
+.certification-title-cute .certification-cat {
+  display: inline-block;
+  margin-left: 0.35rem;
+}
+.certification-subtitle {
+  color: rgba(74, 44, 58, 0.7);
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+.certification-col {
+  margin-bottom: 2rem;
+}
+.certification-block {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 1.75rem;
+  border: 1px solid rgba(233, 160, 208, 0.4);
+  height: 100%;
+  box-shadow: 0 4px 20px rgba(233, 160, 208, 0.2);
+}
+.certification-block-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4a2c3a;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.certification-block-icon {
+  color: #c2185b;
+}
+.certification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.certification-item {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(233, 160, 208, 0.25);
+}
+.certification-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.certification-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.certification-item-title {
+  font-size: 1rem;
+  color: #3d2a35;
+  font-weight: 600;
+}
+.certification-item-meta {
+  font-size: 0.875rem;
+  color: rgba(61, 42, 53, 0.7);
+}
+.certification-item-link {
+  font-size: 0.8rem;
+  color: #c2185b;
+  text-decoration: none;
+  margin-top: 0.25rem;
+  transition: color 0.2s;
+}
+.certification-item-link:hover {
+  color: #880e4f;
+}
+
 /************ Projects Css ************/
 .project {
   padding: 80px 0;
