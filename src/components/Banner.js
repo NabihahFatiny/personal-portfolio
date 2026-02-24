@@ -76,7 +76,7 @@ export const Banner = () => {
                   <a href="#connect" className="banner-btn banner-btn-contact">
                     Contact Me
                   </a>
-                  <a href="/cv.pdf" download className="banner-btn banner-btn-cv">
+                  <a href="/cv.pdf" download="Nur Nabihah Fatiny Resume.pdf" className="banner-btn banner-btn-cv">
                     <Download size={26} /> Download CV
                   </a>
                 </div>
