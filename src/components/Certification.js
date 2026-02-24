@@ -1,26 +1,20 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { Award, People } from "react-bootstrap-icons";
+import { Palette, Eye } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
-const CERTIFICATIONS = [
-  {
-    title: "Your certification name",
-    issuer: "Issuer / Platform",
-    date: "Year",
-    link: "",
-  },
-  // Add more: { title: "...", issuer: "...", date: "...", link: "https://..." },
-];
+const CARD_COLORS = ["blue", "green", "purple", "pink", "orange", "teal", "indigo", "coral", "mint"];
 
-const PARTICIPATION = [
-  {
-    title: "Event or program name",
-    role: "Role / Type (e.g. Participant, Speaker)",
-    date: "Year",
-    link: "",
-  },
-  // Add more: { title: "...", role: "...", date: "...", link: "https://..." },
+const CERTIFICATIONS = [
+  { title: "Google UX Design Certificate", issuer: "Google via Coursera", status: "COMPLETED", link: "" },
+  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
+  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
+  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
+  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
+  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
+  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
+  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
+  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
 ];
 
 export const Certification = () => {
@@ -31,61 +25,43 @@ export const Certification = () => {
           {({ isVisible }) => (
             <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
               <header className="certification-header">
-                <h2 className="certification-title-cute">
-                  Certification & Participation <span className="certification-cat" aria-hidden="true">🐱</span>
+                <h2 className="certification-title-wrap">
+                  <span className="certification-title-bold">Certifications &</span>
+                  <span className="certification-title-italic">Appreciation</span>
                 </h2>
                 <p className="certification-subtitle">
-                  Certificates earned and events I’ve taken part in.
+                  A curated record of professional achievements, recognized credentials, and appreciation.
                 </p>
               </header>
 
-              <Row>
-                <Col xs={12} lg={6} className="certification-col">
-                  <div className="certification-block">
-                    <h3 className="certification-block-title">
-                      <Award size={22} className="certification-block-icon" />
-                      Certifications
-                    </h3>
-                    <ul className="certification-list">
-                      {CERTIFICATIONS.map((item, index) => (
-                        <li key={index} className="certification-item">
-                          <div className="certification-item-content">
-                            <strong className="certification-item-title">{item.title}</strong>
-                            <span className="certification-item-meta">{item.issuer} · {item.date}</span>
-                            {item.link && (
-                              <a href={item.link} target="_blank" rel="noopener noreferrer" className="certification-item-link">
-                                View certificate
-                              </a>
-                            )}
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Col>
-                <Col xs={12} lg={6} className="certification-col">
-                  <div className="certification-block">
-                    <h3 className="certification-block-title">
-                      <People size={22} className="certification-block-icon" />
-                      Participation
-                    </h3>
-                    <ul className="certification-list">
-                      {PARTICIPATION.map((item, index) => (
-                        <li key={index} className="certification-item">
-                          <div className="certification-item-content">
-                            <strong className="certification-item-title">{item.title}</strong>
-                            <span className="certification-item-meta">{item.role} · {item.date}</span>
-                            {item.link && (
-                              <a href={item.link} target="_blank" rel="noopener noreferrer" className="certification-item-link">
-                                More info
-                              </a>
-                            )}
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Col>
+              <Row className="certification-cards-row">
+                {CERTIFICATIONS.map((item, index) => {
+                  const color = CARD_COLORS[index % CARD_COLORS.length];
+                  return (
+                  <Col key={index} xs={12} sm={6} lg={4} className="certification-card-col">
+                    <article className={`certification-card certification-card--${color}`}>
+                      <div className="certification-card-top">
+                        <div className="certification-card-icon-wrap">
+                          <Palette size={26} className="certification-card-icon" />
+                        </div>
+                        <div className="certification-card-head">
+                          <h3 className="certification-card-title">{item.title}</h3>
+                          <p className="certification-card-issuer">{item.issuer}</p>
+                        </div>
+                      </div>
+                      <span className="certification-card-status">{item.status}</span>
+                      <a
+                        href={item.link || "#"}
+                        target={item.link ? "_blank" : undefined}
+                        rel={item.link ? "noopener noreferrer" : undefined}
+                        className="certification-card-btn"
+                      >
+                        <Eye size={18} /> View Certificate
+                      </a>
+                    </article>
+                  </Col>
+                  );
+                })}
               </Row>
             </div>
           )}

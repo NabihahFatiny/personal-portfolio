@@ -847,85 +847,177 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   50% { opacity: 0.92; filter: brightness(1.08); }
 }
 .certification-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 3rem;
 }
-.certification-title-cute {
-  font-size: clamp(2rem, 4vw + 1rem, 48px);
-  font-weight: 800;
+.certification-title-wrap {
+  font-family: 'Playfair Display', Georgia, serif;
   margin-bottom: 0.5rem;
-  color: #4a2c3a;
+  line-height: 1.2;
+}
+.certification-title-bold {
+  display: block;
+  font-size: clamp(2rem, 4vw + 1rem, 48px);
+  font-weight: 700;
+  color: #000;
   letter-spacing: -0.02em;
 }
-.certification-title-cute .certification-cat {
-  display: inline-block;
-  margin-left: 0.35rem;
+.certification-title-italic {
+  display: block;
+  font-size: clamp(1.75rem, 3.5vw + 0.75rem, 42px);
+  font-weight: 500;
+  font-style: italic;
+  color: #b8860b;
+  letter-spacing: -0.01em;
 }
 .certification-subtitle {
-  color: rgba(74, 44, 58, 0.7);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1rem;
-  letter-spacing: 0.3px;
+  font-weight: 400;
+  color: #696969;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  max-width: 560px;
 }
-.certification-col {
-  margin-bottom: 2rem;
+.certification-cards-row {
+  margin-bottom: 0;
 }
-.certification-block {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 20px;
-  padding: 1.75rem;
-  border: 1px solid rgba(233, 160, 208, 0.4);
-  height: 100%;
-  box-shadow: 0 4px 20px rgba(233, 160, 208, 0.2);
+.certification-card-col {
+  margin-bottom: 1.5rem;
 }
-.certification-block-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #4a2c3a;
-  margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.certification-block-icon {
-  color: #c2185b;
-}
-.certification-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.certification-item {
-  padding: 0.85rem 0;
-  border-bottom: 1px solid rgba(233, 160, 208, 0.25);
-}
-.certification-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-.certification-item-content {
+.certification-card {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  background: #fff;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
-.certification-item-title {
-  font-size: 1rem;
-  color: #3d2a35;
+.certification-card-top {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.certification-card-icon-wrap {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #e3f2fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.certification-card-icon {
+  color: #1976d2;
+}
+.certification-card-head {
+  flex: 1;
+  min-width: 0;
+}
+.certification-card-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 0.2rem 0;
+  line-height: 1.35;
+}
+.certification-card-issuer {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #696969;
+  margin: 0;
+}
+.certification-card-status {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #5a6b7d;
+  background: #d6e0ef;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+.certification-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  font-size: 0.9rem;
   font-weight: 600;
-}
-.certification-item-meta {
-  font-size: 0.875rem;
-  color: rgba(61, 42, 53, 0.7);
-}
-.certification-item-link {
-  font-size: 0.8rem;
-  color: #c2185b;
+  color: #fff;
+  background: #4285f4;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
   text-decoration: none;
-  margin-top: 0.25rem;
-  transition: color 0.2s;
+  transition: background 0.2s;
+  margin-top: auto;
 }
-.certification-item-link:hover {
-  color: #880e4f;
+.certification-card-btn:hover {
+  background: #3367d6;
+  color: #fff;
 }
+
+/* Colourful card variants – Certifications & Appreciation */
+.certification-card--blue .certification-card-icon-wrap { background: #e3f2fd; }
+.certification-card--blue .certification-card-icon { color: #1976d2; }
+.certification-card--blue .certification-card-status { background: #bbdefb; color: #0d47a1; }
+.certification-card--blue .certification-card-btn { background: #2196f3; }
+.certification-card--blue .certification-card-btn:hover { background: #1976d2; }
+
+.certification-card--green .certification-card-icon-wrap { background: #e8f5e9; }
+.certification-card--green .certification-card-icon { color: #2e7d32; }
+.certification-card--green .certification-card-status { background: #c8e6c9; color: #1b5e20; }
+.certification-card--green .certification-card-btn { background: #4caf50; }
+.certification-card--green .certification-card-btn:hover { background: #388e3c; }
+
+.certification-card--purple .certification-card-icon-wrap { background: #f3e5f5; }
+.certification-card--purple .certification-card-icon { color: #7b1fa2; }
+.certification-card--purple .certification-card-status { background: #e1bee7; color: #4a148c; }
+.certification-card--purple .certification-card-btn { background: #9c27b0; }
+.certification-card--purple .certification-card-btn:hover { background: #7b1fa2; }
+
+.certification-card--pink .certification-card-icon-wrap { background: #fce4ec; }
+.certification-card--pink .certification-card-icon { color: #c2185b; }
+.certification-card--pink .certification-card-status { background: #f8bbd9; color: #880e4f; }
+.certification-card--pink .certification-card-btn { background: #e91e63; }
+.certification-card--pink .certification-card-btn:hover { background: #c2185b; }
+
+.certification-card--orange .certification-card-icon-wrap { background: #fff3e0; }
+.certification-card--orange .certification-card-icon { color: #e65100; }
+.certification-card--orange .certification-card-status { background: #ffe0b2; color: #bf360c; }
+.certification-card--orange .certification-card-btn { background: #ff9800; }
+.certification-card--orange .certification-card-btn:hover { background: #f57c00; }
+
+.certification-card--teal .certification-card-icon-wrap { background: #e0f2f1; }
+.certification-card--teal .certification-card-icon { color: #00695c; }
+.certification-card--teal .certification-card-status { background: #b2dfdb; color: #004d40; }
+.certification-card--teal .certification-card-btn { background: #009688; }
+.certification-card--teal .certification-card-btn:hover { background: #00796b; }
+
+.certification-card--indigo .certification-card-icon-wrap { background: #e8eaf6; }
+.certification-card--indigo .certification-card-icon { color: #303f9f; }
+.certification-card--indigo .certification-card-status { background: #c5cae9; color: #1a237e; }
+.certification-card--indigo .certification-card-btn { background: #3f51b5; }
+.certification-card--indigo .certification-card-btn:hover { background: #303f9f; }
+
+.certification-card--coral .certification-card-icon-wrap { background: #ffebee; }
+.certification-card--coral .certification-card-icon { color: #c62828; }
+.certification-card--coral .certification-card-status { background: #ffcdd2; color: #b71c1c; }
+.certification-card--coral .certification-card-btn { background: #f44336; }
+.certification-card--coral .certification-card-btn:hover { background: #d32f2f; }
+
+.certification-card--mint .certification-card-icon-wrap { background: #e8f5e9; }
+.certification-card--mint .certification-card-icon { color: #1b5e20; }
+.certification-card--mint .certification-card-status { background: #a5d6a7; color: #2e7d32; }
+.certification-card--mint .certification-card-btn { background: #66bb6a; }
+.certification-card--mint .certification-card-btn:hover { background: #43a047; }
 
 /************ Projects Css ************/
 .project {
