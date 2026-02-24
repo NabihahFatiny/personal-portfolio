@@ -7,7 +7,7 @@ export const Footer = () => {
         <Row className="align-items-center">
           <Col size={12} sm={6}>
             <a href="/" className="footer-logo-text">
-              <span className="logo-emoji" aria-hidden="true">🐱</span>
+              <span className="logo-emoji" aria-hidden="true">🌸</span>
               <span className="logo-name">Tiny</span>
             </a>
           </Col>

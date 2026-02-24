@@ -1,20 +1,20 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { Palette, Eye } from "react-bootstrap-icons";
+import { Award, Eye } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
 const CARD_COLORS = ["blue", "green", "purple", "pink", "orange", "teal", "indigo", "coral", "mint"];
 
 const CERTIFICATIONS = [
-  { title: "Google UX Design Certificate", issuer: "Google via Coursera", status: "COMPLETED", link: "" },
-  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
-  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
-  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
-  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
-  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
-  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
-  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
-  { title: "Certification name", issuer: "Issuer / Platform", status: "COMPLETED", link: "" },
+  { title: "Majlis Kecemerlangan Anugerah Lonjakan Paradigma", issuer: "UMPSA / MDEC", status: "COMPLETED", link: (process.env.PUBLIC_URL || "") + "/anugerah-lonjakan-paradigma.png" },
+  { title: "EF SET English Certification", issuer: "EF Standard English Test", status: "COMPLETED", link: (process.env.PUBLIC_URL || "") + "/ef-set-english-certification.pdf" },
+  { title: "Certificate Aptitude Test UMP", issuer: "Universiti Malaysia Pahang", status: "COMPLETED", link: (process.env.PUBLIC_URL || "") + "/sijil-aptitude-test-ump-august-2023.pdf" },
+  { title: "Mathematics Screening Test", issuer: "Universiti Malaysia Pahang", status: "COMPLETED", link: (process.env.PUBLIC_URL || "") + "/mathematics-screening-test.pdf" },
+  { title: "Edit Like a Pro with Canva", issuer: "Canva", status: "COMPLETED", link: (process.env.PUBLIC_URL || "") + "/edit-like-a-pro-with-canva.pdf" },
+  { title: "Certificate Click Wisely & Social Media Ethics", issuer: "UMPSA", status: "COMPLETED", link: (process.env.PUBLIC_URL || "") + "/sijil-click-wisely-social-media-ethics.pdf" },
+  { title: "Certificate Pengurusan Majlis", issuer: "UMPSA", status: "COMPLETED", link: (process.env.PUBLIC_URL || "") + "/sijil-pengurusan-majlis.pdf" },
+  { title: "Certificate Digital Citizenship", issuer: "UMPSA", status: "COMPLETED", link: (process.env.PUBLIC_URL || "") + "/sijil-digital-citizenship.pdf" },
+  { title: "Certificate Townhall Akademi ADAB - Co-Curriculum", issuer: "UMPSA / Akademi ADAB", status: "COMPLETED", link: (process.env.PUBLIC_URL || "") + "/certificate-townhall-akademi-adab-co-curriculum.pdf" },
 ];
 
 export const Certification = () => {
@@ -30,7 +30,7 @@ export const Certification = () => {
                   <span className="certification-title-italic">Appreciation</span>
                 </h2>
                 <p className="certification-subtitle">
-                  A curated record of professional achievements, recognized credentials, and appreciation.
+                  Highlights my involvement in university activities, workshops, and programs that contributed to my academic growth and personal development.
                 </p>
               </header>
 
@@ -42,7 +42,7 @@ export const Certification = () => {
                     <article className={`certification-card certification-card--${color}`}>
                       <div className="certification-card-top">
                         <div className="certification-card-icon-wrap">
-                          <Palette size={26} className="certification-card-icon" />
+                          <Award size={26} className="certification-card-icon" />
                         </div>
                         <div className="certification-card-head">
                           <h3 className="certification-card-title">{item.title}</h3>
