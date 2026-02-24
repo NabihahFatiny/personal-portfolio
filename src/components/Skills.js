@@ -20,6 +20,9 @@ import colorSharp from "../assets/img/color-sharp.png";
 const SKILLS = [
   { name: 'Java', icon: CodeSlash },
   { name: 'JavaScript', icon: CodeSlash },
+  { name: 'C', icon: CodeSlash },
+  { name: 'C++', icon: CodeSlash },
+  { name: 'C#', icon: CodeSlash },
   { name: 'HTML5', icon: FileCode },
   { name: 'CSS3', icon: Palette },
   { name: 'SQL', icon: Terminal },

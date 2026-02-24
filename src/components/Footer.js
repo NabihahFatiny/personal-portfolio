@@ -12,7 +12,7 @@ export const Footer = () => {
             </a>
           </Col>
           <Col size={12} sm={6} className="text-center text-sm-end">
-            <p className="footer-cat">Made with <span className="footer-cat-icon">🐱</span> · Copyright 2022. All Rights Reserved</p>
+            <p className="footer-cat">Made with <span className="footer-cat-icon">🐱</span> Made by Nabihah Fatiny</p>
           </Col>
         </Row>
       </Container>
